@@ -12,6 +12,7 @@ As a goal-oriented person, I dreamed of achieving the global high score for Lett
 I had an idea. What if I were to screenshot the Letters board, go back to the Home screen, thereby pausing the game, use the Internet to figure out the best word to spell, and input that word in Letters? I found a website, [WordFind](http://www.wordfind.com), that takes as input twelve letters and outputs words that can be spelled with those letters.
 
 ![alt text](https://github.com/vermont42/Solver2/tree/master/images/wordFind.png “WordFind”)
+![WordFind](https://raw.github.com/vermont42/Solver2/master/images/wordFind.png)
 
 Using words suggested by WordFind, I was able to consistently score 1000 points per game and sometimes as many as 1500. This technique had problems, though. First, WordFind only accepts twelve letters, not the twenty-five that Letters provides. By giving WordFind just twelve letters, I was arbitrarily constraining the universe of possible words. (How did I choose those twelve letters? Guesswork. I started with the power-up letters and filled in the remaining seven or eight letters with a mix I thought likely to spell English words and result in high scores.) Second, I had no way of knowing how much each of the words output by WordFind was worth in Letters because the website was unaware of Letters' letter values or power-ups. I therefore had to guess using the presence of power-up and high-value letters in candidate words.
 
