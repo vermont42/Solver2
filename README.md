@@ -11,20 +11,19 @@ As a goal-oriented person, I dreamed of achieving the global high score for Lett
 
 I had an idea. What if I were to screenshot the Letters board, go back to the Home screen, thereby pausing the game, use the Internet to figure out the best word to spell, and input that word in Letters? I found a website, [WordFind](http://www.wordfind.com), that takes as input twelve letters and outputs words that can be spelled with those letters.
 
-![alt text](https://github.com/vermont42/Solver2/tree/master/images/wordFind.png “WordFind”)
 ![WordFind](https://raw.github.com/vermont42/Solver2/master/images/wordFind.png)
 
 Using words suggested by WordFind, I was able to consistently score 1000 points per game and sometimes as many as 1500. This technique had problems, though. First, WordFind only accepts twelve letters, not the twenty-five that Letters provides. By giving WordFind just twelve letters, I was arbitrarily constraining the universe of possible words. (How did I choose those twelve letters? Guesswork. I started with the power-up letters and filled in the remaining seven or eight letters with a mix I thought likely to spell English words and result in high scores.) Second, I had no way of knowing how much each of the words output by WordFind was worth in Letters because the website was unaware of Letters' letter values or power-ups. I therefore had to guess using the presence of power-up and high-value letters in candidate words.
 
 I decided that software could solve the second problem. I created an app, Letters Solver 1 (LS1), that took as input the power-ups on the board and a candidate word and then output the word's score.
 
-![alt text](https://github.com/vermont42/Solver2/tree/master/images/LS1.png “Letters Solver 1”)
+![Letters Solver 1](https://raw.github.com/vermont42/Solver2/master/images/LS1.png)
 
 LS1 removed the guesswork as to word score but did not address the twelve-letter limit inherent in WordFind.
 
 I did some digging on the App Store and found [WordsFinder](http://janswaal.home.xs4all.nl/iPhone/WordsFinder/). This powerful app does many things, but the feature of interest to me was that I could input all twenty-five letters on the Letters board and get _all_ ten-to-twelve-letter English-language words that could be spelled with them. I plugged candidate words from WordsFinder into LS1 and got my high score up to about 2000. Although this technique did increase my high score, there were two problems with it. First, the process of inputting letters on the board into WordsFinder and then plugging candidate words into LS1 was extremely tedious. Second, WordsFinder, by limiting its output to words of at least ten letters in length, was artificially limiting the average score per letter. Consider the following example: The letters on the board are uvoeiendbttiidqsooawmpcma. Q is light blue, u is light red, i is dark red, and t is dark blue. According to WordsFinder and LS1, "antimosquito" may be the most valuable twelve-letter word; its total score is 288, with an average score per letter of 24. But "quit" is worth _54_ points per letter, and it's hecka easier to input in Letters. (I came to find the process of inputting suggested twelve-letter words in Letters stressful and error-prone because of the time constraint.) Thus, "quit" is arguably a better choice than "antimosquito" because it gives more bang for the buck and is less likely to result in a mis-tap when inputting the word in Letters. But WordsFinder doesn't show four-letter words and is unaware of Letters point values or power-ups and therefore does not suggest the "better" word.
 
-![alt text](https://github.com/vermont42/Solver2/tree/master/images/WordsFinder.png “WordsFinder”)
+![WordsFinder](https://raw.github.com/vermont42/Solver2/master/images/WordsFinder.png)
 
 LS1, working in concert with WordFind and WordsFinder, had helped me achieve some good scores, but I realized that if I was going to beat Mr. Creasy’s high score, I needed to completely roll my own solution.
 
@@ -48,7 +47,7 @@ Initially, I put the maximum and minimum lengths in editable UITextFields, but t
 
 With LS2 complete, I started attacking Mr. Creasy’s high score. As this [video](https://vimeo.com/115927968) attests, the process of using LS2 is both painless and jazzy. On my eleventh attempt, I achieved my goal by receiving a score of 6696, 2464 points higher than Mr. Creasy’s best. This Game Center screenshot is the proof: [screenshot] The avatar you see is my Tonkinese cat, Sandy. In this round, LS2 suggested vampirize, plaque, taxable, quiz, pokeful, subitize, qorma, sucking, pinecone, puja, evzone, and jeton. I consider my vocabulary pretty good, but I have never heard or seen six of those words, and I would therefore not have thought of them a possible Letters words, even without time pressure.
 
-![alt text](https://github.com/vermont42/Solver2/tree/master/images/GameCenter.png “Game Center”)
+![Game Center](https://raw.github.com/vermont42/Solver2/master/images/GameCenter.png)
 
 Notwithstanding this success, there are ways I could improve LS2. For example, I could have it grab the latest screenshot from the camera roll automatically rather than having the user manually select it. I could use a route-planning algorithm to suggest to the user the shortest (in the spatial sense) sequence of letters to tap for any word suggested. I could build a robot to input the suggested word more quickly than any human could do.
 
