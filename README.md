@@ -53,5 +53,5 @@ Notwithstanding this success, there are ways I could improve LS2. For example, I
 
 Leonardo da Vinci once said that no work of art is ever complete, only abandoned. I do not consider LS2 a work of art, but I do not plan to implement new features for it. Rather, I plan to take what I learned from creating LS2 to build my next app, one with a less-nefarious purpose and a broader appeal, perhaps one for learning Spanish verb conjugations or tracking competitors in running races.
 
-The code for LS2 is in this repo. Part of my motivation for putting it here is so that other Letters players can use it to beat my high score. A person with good hand-eye coordination should be able to crush my high score.
+The code for LS2 is in this repo. Part of my motivation for putting it here is curiosity at how high a score a person with better hand-eye coordination can get.
 
